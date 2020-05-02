@@ -3,11 +3,11 @@ pipeline {
         registry = "ppavlov28/py_test"
         registryCredential = 'a7b649f1-4558-47ec-b8dd-37dba9bfe362'
     }
-    agent {label 'node2'}
+    agent {label 'master'}
     stages {
         stage('Clone Git Repo') {
             steps {
-                git 'git@github.com:ppavlov28/13.docker.git'
+                git credentialsId: 'b2922652-0478-4a1d-8072-7083a8ef79f8', url: 'https://github.com/ppavlov28/13.docker'
             }
         }
         stage('Build image') {
