@@ -28,7 +28,7 @@ pipeline {
         }
         stage('Remove docker image') {
             steps {
-                sh "docker rmi $registry:$BUILD_NUMBER0"
+                sh "docker rmi $registry:$BUILD_NUMBER"
             }
         }
     }
